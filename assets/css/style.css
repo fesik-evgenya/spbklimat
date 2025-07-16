@@ -1,0 +1,288 @@
+:root {
+    --red: #CC0D07;
+    --blue: #21045A;
+    --green: #229E1A;
+    --light: #fff;
+    --text: #333;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    background: var(--light);
+    scroll-behavior: smooth;
+    padding-top: 70px;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url("../image/webp/hero.webp") right center/cover no-repeat;
+    color: var(--blue);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    margin-left: 10%;
+}
+
+.hero-content {
+    max-width: 25%;
+    padding-right: 50px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.values, .process {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.value, .step {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 20px;
+    flex: 1 1 200px;
+    max-width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.value:hover, .step:hover {
+    transform: translateY(-5px);
+}
+
+.value i, .step i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--blue);
+}
+
+.team {
+    position: relative;
+    z-index: 2;
+}
+
+.team img {
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+    width: 100%;
+
+}
+
+.btn {
+    background-color: var(--red);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a40a05;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Для "Экспертность" (синий) */
+.values .value:first-child i {
+    color: var(--blue);
+}
+
+/* Для "Индивидуальный подход" (зеленый) */
+.values .value:nth-child(2) i {
+    color: var(--green);
+}
+
+/* Для "Надежность" (красный) */
+.values .value:nth-child(3) i {
+    color: var(--red);
+}
+
+/* Для "Локальность" (синий) */
+.values .value:nth-child(4) i {
+    color: var(--blue);
+}
+
+/* Для "Заявка" (синий) */
+.process .step:first-child i {
+    color: var(--blue);
+}
+
+/* Для "Выезд инженера" (зеленый) */
+.process .step:nth-child(2) i {
+    color: var(--green);
+}
+
+/* Для "Монтаж" (красный) */
+.process .step:nth-child(3) i {
+    color: var(--red);
+}
+
+/* Для "Гарантия" (синий) */
+.process .step:nth-child(4) i {
+    color: var(--blue);
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 65px;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+    header nav {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .values, .process {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 5px 20px;
+    }
+
+    header .contact {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header .btn {
+        margin: 5px 0 0 0;
+    }
+
+    .hero h1 {
+        font-size: 1.6em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.4em;
+    }
+
+    .hero p {
+        font-size: 0.95em;
+    }
+
+    header nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .floating {
+        right: 10px;
+    }
+}
+
+@media (max-width: 375px) { /* iPhone Landscape */
+    body {
+        padding-top: 60px; /* Для хедера высотой 60px */
+    }
+
+    header {
+        padding: 5px 10px;
+    }
+
+    .hero {
+        padding: 40px 5px;
+    }
+
+    .hero h1 {
+        font-size: 1.2em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 350px) {
+    .hero h1 {
+        font-size: 1.1em;
+    }
+
+    .hero p {
+        font-size: 0.85em;
+    }
+
+    .value, .step {
+        max-width: 90%;
+    }
+}
