@@ -9,7 +9,7 @@
 }
 
 .footer__divider {
-    display: none; /* Скрываем разделитель */
+    display: none;
 }
 
 .footer__content {
@@ -35,8 +35,22 @@
     color: #21045A;
 }
 
+
 .social {
     margin-top: 10px;
+}
+
+.footer__contacts a {
+    text-decoration: none;
+}
+
+.social, .footer__contacts a:hover {
+    color: #CC0D07;
+}
+
+.footer__social a,
+.footer__social a:hover {
+    text-decoration: none !important;
 }
 
 @media (min-width: 768px) {

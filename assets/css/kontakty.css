@@ -1,0 +1,559 @@
+:root {
+    --red: #CC0D07;
+    --blue: #21045A;
+    --green: #229E1A;
+    --light: #fff;
+    --text: #333;
+    --shadow: 0 15px 35px rgba(33, 4, 90, 0.3);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    padding-top: 70px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8f5 100%);
+}
+
+.contacts-page {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px 50px;
+}
+
+/* Заголовок страницы */
+.page-title {
+    text-align: center;
+    color: var(--blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    padding: 0 15px;
+    position: relative;
+    animation: fadeIn 0.8s ease forwards;
+    text-shadow: 0 2px 4px rgba(33, 4, 90, 0.1);
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--red);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Сетка контактов */
+.contacts-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Общие стили для блоков */
+.contacts-block,
+.map-container,
+.contact-form {
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: var(--transition);
+    background: white;
+    animation: gentleAppear 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.contacts-block,
+.map-container {
+    height: 390px; /* Фиксированная высота */
+    width: 420px; /* Ширина блоков */
+    max-height: 390px !important; /* Минимальная высота */
+}
+
+/* Эффект размытых краёв */
+.contacts-block::before,
+.map-container::before,
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f8);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+/* Анимация при наведении */
+.contacts-block:hover,
+.map-container:hover,
+.contact-form:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(33, 4, 90, 0.4);
+}
+
+/* Плавная анимация появления */
+@keyframes gentleAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Задержка анимации для последовательного появления */
+.contacts-block {
+    animation-delay: 0.1s;
+}
+
+.map-container {
+    animation-delay: 0.2s;
+}
+
+.contact-form {
+    animation-delay: 0.3s;
+}
+
+/* Блок с контактной информацией */
+.contacts-block {
+    border: 1px solid rgba(33, 4, 90, 0.1);
+    padding: 15px 5px;
+    height: 420px;
+    width: 420px;
+    max-height: 420px;
+    transition: var(--transition);
+}
+
+/* Элементы контактов */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(33, 4, 90, 0.03);
+    border-radius: 10px;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(33, 4, 90, 0.08);
+    border: none;
+}
+
+.contact-item:hover {
+    background: rgba(33, 4, 90, 0.08);
+    transform: translateX(5px);
+}
+
+.contact-item__icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    color: var(--blue);
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 4, 90, 0.05);
+    border-radius: 50%;
+    padding: 8px;
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-item__icon {
+    background: var(--blue);
+    color: white;
+    transform: scale(1.1);
+}
+
+.contact-item__text, .contact-link {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
+}
+
+.contact-link {
+    color: var(--blue);
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--red);
+    text-decoration: none;
+}
+
+.contact-link:hover::after {
+    width: 100%;
+}
+
+/* Блок с картой */
+.map-container {
+    border: 1px solid rgba(33, 4, 90, 0.1);
+    height: 420px;
+    width: 420px;
+    min-height: 420px;
+}
+
+/* Форма обратной связи */
+.contact-form {
+    border: 1px solid rgba(33, 4, 90, 0.1);
+    padding: 40px 35px;
+    margin: 50px auto 10px;
+    width: 100%;
+    max-width: 880px;
+    min-width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-title {
+    color: var(--blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--red);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1.2rem;
+    background: rgba(33, 4, 90, 0.03);
+    border: 1px solid rgba(33, 4, 90, 0.15);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-shadow: 0 3px 10px rgba(33, 4, 90, 0.05);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--blue);
+    background: rgba(33, 4, 90, 0.05);
+    box-shadow: 0 0 15px rgba(33, 4, 90, 0.15);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Плейсхолдеры */
+::placeholder {
+    color: rgba(33, 4, 90, 0.5);
+    font-weight: 400;
+}
+
+.form-button-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--red), #a40a05);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(204, 13, 7, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+    );
+    transition: 0.6s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(204, 13, 7, 0.4);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+/* Графические элементы */
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px;
+    transform: rotate(180deg);
+}
+
+.wave-divider .shape-fill {
+    fill: rgba(33, 4, 90, 0.08);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Эффект пульсации для иконок */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.contact-item__icon {
+    animation: pulse 4s infinite ease-in-out;
+}
+
+/* ==================== АДАПТИВНЫЕ СТИЛИ ==================== */
+/* Ноутбуки (1024px) */
+@media (max-width: 1024px) {
+    .contacts-grid {
+        gap: 25px;
+    }
+
+    .contacts-block, .map-container {
+        height: 400px;
+        width: 380px;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Планшеты (768px) */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .contacts-block, .map-container {
+        height: 380px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-item {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .contact-item__icon {
+        font-size: 1.6rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    .contact-item__text, .contact-link {
+        font-size: 1rem;
+    }
+
+    .form-title {
+        font-size: 1.9rem;
+    }
+
+    .contacts-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Средние мобильные (600px) */
+@media (max-width: 600px) {
+    .contacts-block, .map-container {
+        height: 360px;
+    }
+
+    .contact-form {
+        padding: 30px 25px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .submit-btn {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Мелкие мобильные (480px) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .contacts-page {
+        padding: 30px 10px 60px;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .contacts-block, .map-container {
+        height: 340px;
+        padding: 25px 20px;
+    }
+
+    .contact-item {
+        padding: 12px 15px;
+        margin-bottom: 18px;
+    }
+
+    .contact-item__icon {
+        font-size: 1.4rem;
+        width: 34px;
+        height: 34px;
+        margin-right: 12px;
+    }
+
+    .contact-item__text, .contact-link {
+        font-size: 0.95rem;
+    }
+
+    .form-title {
+        font-size: 1.7rem;
+    }
+
+    input, textarea {
+        padding: 0.9rem 1.1rem;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .wave-divider svg {
+        height: 80px;
+    }
+
+    .contacts-block::before,
+    .map-container::before,
+    .contact-form::before {
+        filter: blur(10px);
+    }
+}
+
+/* Очень маленькие мобильные (360px) */
+@media (max-width: 360px) {
+    .page-title {
+        font-size: 1.7rem;
+    }
+
+    .contacts-block, .map-container {
+        height: 320px;
+    }
+
+    .contact-item {
+        padding: 10px 12px;
+        margin-bottom: 15px;
+    }
+
+    .form-title {
+        font-size: 1.6rem;
+    }
+
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}

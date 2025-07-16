@@ -62,12 +62,12 @@ a:hover {
 }
 
 .section {
-    padding: 40px 20px;
+    padding: 30px 15px;
     text-align: center;
     position: relative;
     z-index: 1;
     background-color: #fff;
-    margin: 20px auto;
+    margin: 15px auto;
     max-width: 1200px;
 }
 
@@ -103,19 +103,36 @@ a:hover {
     color: var(--blue);
 }
 
+/* Стили для раздела "Наши специалисты" */
 .team {
+    display: flex;
+    align-items: center;
+    gap: 40px;
     position: relative;
-    z-index: 2;
 }
 
-.team img {
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 20px auto;
-    display: block;
+.team-content {
+    flex: 1;
+    margin-top: -20px;
+}
+
+.team-content p {
+    margin-top: 25px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.team-image {
+    flex: 0 0 500px;
+    max-width: 100%;
+}
+
+.team-image img {
+    border-radius: 0 0 20px 0;
     width: 100%;
-
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 .btn {
     background-color: var(--red);
@@ -154,73 +171,209 @@ a:hover {
     color: var(--blue);
 }
 
-/* Для "Заявка" (синий) */
-.process .step:first-child i {
+.step-request i {
+    color: var(--blue) !important;
+}
+
+.step-engineer i {
+    color: var(--green) !important;
+}
+
+.step-install i {
+    color: var(--red) !important;
+}
+
+.step-warranty i {
+    color: var(--blue) !important;
+}
+
+.process {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 12px 10px;;
+    flex: 1 1 180px;
+    max-width: 190px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+    margin: 5px;
+}
+
+.step i {
+    font-size: 2.5em;
+    margin-bottom: 6px;
+}
+
+.step div {
+    font-size: 0.95em;
+}
+
+.step-arrow {
     color: var(--blue);
+    font-size: 1.6em;
+    opacity: 0.7;
+    padding: 0 3px;
+    position: relative;
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
 }
 
-/* Для "Выезд инженера" (зеленый) */
-.process .step:nth-child(2) i {
-    color: var(--green);
-}
-
-/* Для "Монтаж" (красный) */
-.process .step:nth-child(3) i {
+.step-arrow:hover {
+    transform: scale(1.2);
+    opacity: 1;
     color: var(--red);
 }
 
-/* Для "Гарантия" (синий) */
-.process .step:nth-child(4) i {
-    color: var(--blue);
+@keyframes pulse {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
 }
 
+
+/* АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ */
+/* Общие адаптивные настройки */
 @media (max-width: 1024px) {
     body {
         padding-top: 65px;
     }
 
-    header {
-        flex-wrap: wrap;
+    .section {
+        padding: 30px 15px;
+        margin: 15px auto;
     }
-    header nav {
-        flex-basis: 100%;
-        text-align: center;
-        margin-top: 10px;
+
+    .values, .process {
+        gap: 15px;
+    }
+
+    .value {
+        padding: 15px;
+        flex: 1 1 180px;
+        max-width: 200px;
+    }
+
+    .value i, .step i {
+        font-size: 1.8em;
+    }
+
+    .step {
+        padding: 12px 10px;
+        max-width: 180px;
+    }
+
+    .step-arrow {
+        font-size: 1.5em;
     }
 }
 
+/* Планшеты и большие мобильные */
 @media (max-width: 768px) {
-    .values, .process {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    /* HERO-секция */
     .hero {
-        padding: 60px 10px;
+        padding: 50px 15px;
+        min-height: 300px;
+        background-position: 70% center;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .hero-content {
-        max-width: 100%;
-        padding-right: 0;
+        max-width: 90%;
+        padding: 20px 0 20px 20px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        margin: 0 auto;
     }
 
     .hero h1 {
         font-size: 1.8em;
+        margin-top: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    /* Секция "Наши специалисты" */
+    .team {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-image {
+        order: -1;
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+
+    .team-content {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .team-content p {
+        text-align: center;
+    }
+
+    /* Инфографика процесса */
+    .process {
+        flex-direction: column;
+        gap: 0;
+        margin-top: -15px;
+        margin-bottom: -5px;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        animation: pulse-vertical 2s infinite;
+        padding: 2px 0;
+        font-size: 1.4em;
+    }
+
+    .step {
+        max-width: 160px;
+        padding: 10px 8px;
+        margin: 3px;
+    }
+
+    .step i {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+    }
+
+    .step div {
+        font-size: 0.9em;
+    }
+
+    @keyframes pulse-vertical {
+        0% { transform: rotate(90deg) translateY(0); }
+        50% { transform: rotate(90deg) translateY(5px); }
+        100% { transform: rotate(90deg) translateY(0); }
     }
 }
 
+/* Средние мобильные */
 @media (max-width: 600px) {
-    header {
-        padding: 5px 20px;
+    .hero {
+        padding: 40px 10px;
+        min-height: 250px;
     }
 
-    header .contact {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    header .btn {
-        margin: 5px 0 0 0;
+    .hero-content {
+        max-width: 95%;
+        padding: 15px;
     }
 
     .hero h1 {
@@ -230,9 +383,43 @@ a:hover {
     .hero p {
         font-size: 1em;
     }
+
+    .values, .process {
+        gap: 12px;
+    }
+
+    .value {
+        flex: 1 1 160px;
+        max-width: 180px;
+        padding: 12px;
+    }
+
+    .step {
+        max-width: 140px;
+        padding: 8px 6px;
+    }
+
+    .step i {
+        font-size: 1.6em;
+    }
+
+    .step-arrow {
+        font-size: 1.2em;
+    }
+
+    .section {
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
 }
 
+/* Маленькие мобильные */
 @media (max-width: 480px) {
+    .hero {
+        min-height: 220px;
+        padding: 30px 5px;
+    }
+
     .hero h1 {
         font-size: 1.4em;
     }
@@ -241,27 +428,114 @@ a:hover {
         font-size: 0.95em;
     }
 
-    header nav a {
-        display: inline-block;
-        margin: 5px;
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 1em;
     }
 
-    .floating {
-        right: 10px;
+    .process {
+        gap: 0;
+    }
+
+    .section h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .value {
+        max-width: 160px;
+        padding: 10px;
+        flex: 1 1 140px;
+    }
+
+    .value i {
+        font-size: 1.6em;
+    }
+
+    .step {
+        max-width: 130px;
+        padding: 6px 4px;
+        flex: 1 1 120px;
+    }
+
+    .step i {
+        font-size: 1.4em;
+    }
+
+    .step div {
+        font-size: 0.85em;
+    }
+
+    .step-arrow {
+        padding: 1px 0;
+        font-size: 1.1em;
+    }
+
+    .team-content p {
+        font-size: 1em;
     }
 }
 
-@media (max-width: 375px) { /* iPhone Landscape */
+/* Очень маленькие мобильные */
+@media (max-width: 375px) {
     body {
-        padding-top: 60px; /* Для хедера высотой 60px */
-    }
-
-    header {
-        padding: 5px 10px;
+        padding-top: 60px;
     }
 
     .hero {
-        padding: 40px 5px;
+        min-height: 200px;
+        padding: 25px 5px;
+    }
+
+    .hero-content {
+        padding: 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.3em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .value {
+        max-width: 140px;
+        padding: 8px;
+        flex: 1 1 120px;
+    }
+
+    .value div {
+        font-size: 0.9em;
+    }
+
+    .step {
+        max-width: 110px;
+        padding: 5px 3px;
+    }
+
+    .step i {
+        font-size: 1.3em;
+    }
+
+    .step div {
+        font-size: 0.8em;
+    }
+
+    .step-arrow {
+        font-size: 1.3em;
+    }
+
+    .section {
+        padding: 20px 8px;
+    }
+}
+
+/* Экстремально маленькие экраны */
+@media (max-width: 320px) {
+    .value, .step {
+        max-width: 130px;
+        flex: 1 1 110px;
     }
 
     .hero h1 {
@@ -269,20 +543,6 @@ a:hover {
     }
 
     .hero p {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 350px) {
-    .hero h1 {
-        font-size: 1.1em;
-    }
-
-    .hero p {
         font-size: 0.85em;
-    }
-
-    .value, .step {
-        max-width: 90%;
     }
 }

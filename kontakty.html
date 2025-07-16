@@ -2,9 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Кодировка -->
+    <meta charset="UTF-8">
+    <!-- Адаптивность -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты Климат СПб | Бесплатный выезд инженера в Санкт-Петербурге</title>
+    <meta name="description"
+          content="Контактная информация компании Климат СПб. Профессиональные решения для дома и бизнеса:
+          системы кондиционирования, вентиляции и отопления.">
+    <meta name="keywords"
+          content="контакты Климат СПб, адрес климатической компании Санкт-Петербург,
+          телефон монтажа кондиционеров Питер, вызвать замерщика бесплатно СПб,
+          заказать расчет климатической системы, как проехать Климат СПб,
+          связь с менеджером по оборудованию, купить климатику оптом СПб">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Климат СПб - Контакты">
+    <meta property="og:description"
+          content="Контактная информация компании Климат СПб. Профессиональные климатические решения.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://spbklimat.ru/images/logo/logo.svg">
+    <meta property="og:url" content="https://spbklimat.ru/contacts/">
+    <meta property="og:site_name" content="Климат СПб">
+    <meta property="og:locale" content="ru_RU">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/kontakty.css">
+    <link rel="stylesheet" href="./assets/css/components/header.css">
+    <link rel="stylesheet" href="./assets/css/components/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ_яндекс_карт&lang=ru_RU"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+<!-- Контейнер для хедера (загружается через JS) -->
+<div id="header-container">
+    <div class="loading-spinner"></div>
+</div>
 
+<!-- Основное содержимое страницы -->
+<main class="contacts-page">
+    <!-- Заголовок страницы -->
+    <h1 class="page-title" data-aos="fade-down">Наши контакты</h1>
+
+    <!-- Сетка с контактами и картой -->
+    <div class="contacts-grid">
+        <!-- Блок контактной информации -->
+        <div class="contacts-block" data-aos="fade-right">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt contact-item__icon"></i>
+                <p class="contact-item__text">г. Санкт-Петербург,<br> Ленинский проспект, 140</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-item__icon"></i>
+                <a href="mailto:info@spbklimat.ru" class="contact-link">info@spbklimat.ru</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone-alt contact-item__icon"></i>
+                <a href="tel:+78123052552" class="contact-link">+7 (812) 305-25-52</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-clock contact-item__icon"></i>
+                <p class="contact-item__text">Пн-Пт: 9:00 - 18:00<br>Сб-Вс: выходной</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-vk contact-item__icon"></i>
+                <a href="https://vk.com/spbklimat" class="contact-link" target="_blank">Мы ВКонтакте</a>
+            </div>
+        </div>
+
+        <!-- Блок с картой -->
+        <div class="map-container" id="map" data-aos="fade-left"></div>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <form class="contact-form" id="contactForm" data-aos="fade-up">
+        <h2 class="form-title">Свяжитесь с нами</h2>
+
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+        </div>
+
+        <div class="form-group">
+            <input type="tel" name="phone" placeholder="Ваш телефон" required>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" placeholder="Ваше сообщение" rows="4" required></textarea>
+        </div>
+
+        <div class="form-button-container">
+            <button type="submit" class="submit-btn">Отправить сообщение</button>
+        </div>
+    </form>
+</main>
+
+<!-- Контейнер для футера (загружается через JS) -->
+<div id="footer-container">
+    <div class="loading-spinner"></div>
+</div>
+
+<!-- подключаем JS) -->
+<script src="./assets/js/modules/menu-loader.js" defer></script>
+<script src="./assets/js/modules/footer-loader.js" defer></script>
+<script src="./assets/js/map.js"></script>
+<script src="./assets/js/form.js"></script>
+<script src="./assets/js/pages/kontakts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Инициализация AOS после полной загрузки страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 800, // длительность анимации
+            once: true,    // анимация только один раз
+            offset: 120,  // смещение для срабатывания
+            delay: 100,    // задержка анимации
+        });
+    });
+</script>
 </body>
 </html>
