@@ -26,6 +26,30 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Заголовок страницы */
+.page-title {
+    text-align: center;
+    color: var(--blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    padding: 0 15px;
+    position: relative;
+    animation: fadeIn 0.8s ease forwards;
+    text-shadow: 0 2px 4px rgba(33, 4, 90, 0.1);
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--red);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -106,6 +130,7 @@ a:hover {
 /* Стили для раздела "Наши специалисты" */
 .team {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 40px;
     position: relative;
@@ -260,6 +285,7 @@ a:hover {
         padding: 15px;
         flex: 1 1 180px;
         max-width: 200px;
+
     }
 
     .value i, .step i {
@@ -276,11 +302,10 @@ a:hover {
     }
 }
 
-/* Планшеты и большие мобильные */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     /* HERO-секция */
     .hero {
-        padding: 50px 15px;
+        padding: 50px 15px 20px;
         min-height: 300px;
         background-position: 70% center;
         margin-left: 0;
@@ -292,18 +317,36 @@ a:hover {
     .hero-content {
         max-width: 90%;
         padding: 20px 0 20px 20px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.50);
         border-radius: 10px;
         margin: 0 auto;
     }
 
     .hero h1 {
         font-size: 1.8em;
-        margin-top: 10px;
+        margin: 10px;
     }
 
     .hero p {
         font-size: 1.1em;
+    }
+
+    .values {
+        scale: 90%;
+        flex-wrap:nowrap;
+    }
+
+    .process {
+        scale: 90%;
+        flex-wrap:nowrap;
+    }
+}
+
+/* Планшеты и большие мобильные */
+@media (max-width: 768px) {
+    /* HERO-секция */
+    .hero-content {
+        background: rgba(255, 255, 255, 0.75);
     }
 
     /* Секция "Наши специалисты" */
@@ -324,7 +367,7 @@ a:hover {
     }
 
     .team-content p {
-        text-align: center;
+        text-align: justify;
     }
 
     /* Инфографика процесса */
@@ -387,6 +430,12 @@ a:hover {
     .values, .process {
         gap: 12px;
     }
+
+    .values {
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
 
     .value {
         flex: 1 1 160px;

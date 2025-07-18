@@ -1,10 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Кодировка -->
     <meta charset="UTF-8">
+    <!-- Иконка-превью на Титуле -->
+    <link rel="shorcut icon" href="./assets/image/logo/logo.svg" type="image/svg">
+    <!-- Адаптивность -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Установленные системы климата | Примеры работ Климат СПб в Санкт-Петербурге</title>
+    <meta name="description"
+          content="Создаем идеальный микроклимат с 2015 года. Бесплатный выезд, индивидуальный подход,
+           гарантия качества. Ваш надежный партнер в СПб!">
+    <!-- Ключевые слова -->
+    <meta name="keywords"
+          content="
+
+">
+    <!-- Индексация для поисковиков -->
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title"
+          content="Климат СПб - О компании | Профессиональные климатические решения в Санкт-Петербурге">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://spbklimat.ru/images/logo/logo.svg">
+    <meta property="og:url" content="https://spbklimat.ru/o-nas/">
+    <meta property="og:description"
+          content="Создаем идеальный микроклимат с 2015 года. Бесплатный выезд, индивидуальный подход, гарантия качества.">
+    <meta property="og:site_name" content="Климат СПб">
+    <meta property="og:locale" content="ru_RU">
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/proekty.css">
+    <link rel="stylesheet" href="./assets/css/components/header.css">
+    <link rel="stylesheet" href="./assets/css/components/footer.css">
+    <!-- Язык сайта -->
+    <meta name="language" content="Russian">
+    <!-- Автор -->
+    <meta name="author" content="Fesik Evgeniya">
+    <!-- Гео-метки  -->
+    <meta name="geo.region" content="RU-SPE">
+    <meta name="geo.placename" content="Saint Petersburg">
 </head>
 <body>
+<!-- Контейнер для хедера (загружается через JS) -->
+<div id="header-container">
+    <div class="loading-spinner"></div>
+</div>
 
+<!-- Основной контент - Проекты -->
+<main>
+    <section class="projects">
+        <div class="container">
+            <h2 class="page-title">Наши проекты</h2>
+
+            <!-- Проект 1 -->
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-number">Проект 1</div>
+                    <h3 class="project-title">Прецизионный кондиционер</h3>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-info">
+                        <p class="project-description">
+                            Реализация системы прецизионного кондиционирования для серверной комнаты финансовой
+                            компании.
+                            Обеспечена точная поддержка температуры (±0.5°C) и влажности (±2%) для критически важного
+                            IT-оборудования.<br>
+                            Результат: надежная защита серверов и снижение риска простоев на 98%.
+                        </p>
+
+                        <div class="project-features">
+                            <h4>Особенности проекта:</h4>
+                            <ul class="features-list">
+                                <li>Прецизионные кондиционеры с двойным охлаждением</li>
+                                <li>Система резервирования N+1 для бесперебойной работы</li>
+                                <li>Дистанционный мониторинг и управление параметрами</li>
+                                <li>Энергоэффективная конструкция с рекуперацией тепла</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="carousel1">
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_1_1.webp" alt="Монтаж системы">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_1_2.webp" alt="Монтаж системы">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_1_3.webp" alt="Монтаж системы">
+                                </div>
+                            </div>
+
+                            <div class="carousel-nav">
+                                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-dots" id="dots1">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 2 -->
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-number">Проект 2</div>
+                    <h3 class="project-title">Орловская, первый этап</h3>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-info">
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                        </p>
+
+                        <div class="project-features">
+                            <h4>Особенности проекта:</h4>
+                            <ul class="features-list">
+                                <li>Lorem ipsum dolor sit amet,</li>
+                                <li>Lorem ipsum dolor sit amet,</li>
+                                <li>Lorem ipsum dolor sit amet,</li>
+                                <li>Lorem ipsum dolor sit amet,</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="carousel2">
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_2_1.webp"
+                                         alt="узел подключения системы кондиционеров">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_2_2.webp"
+                                         alt="подключение системы кондиционеров">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="./assets/image/webp/projects/project_2_3.webp"
+                                         alt="монтаж системы кондиционеров">
+                                </div>
+                            </div>
+
+                            <div class="carousel-nav">
+                                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-dots" id="dots2">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Проект 3 -->
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-number">Проект 3</div>
+                    <h3 class="project-title">Lorem ipsum dolor sit</h3>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-info">
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est fuga quaerat.
+                        </p>
+
+                        <div class="project-features">
+                            <h4>Особенности проекта:</h4>
+                            <ul class="features-list">
+                                <li>Lorem ipsum dolor sit amet, </li>
+                                <li>Lorem ipsum dolor sit amet, </li>
+                                <li>Lorem ipsum dolor sit amet, </li>
+                                <li>Lorem ipsum dolor sit amet, </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="carousel3">
+                                <div class="carousel-slide">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+
+                            <div class="carousel-nav">
+                                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-dots" id="dots3">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-section">
+        <div class="container contact-container">
+            <h2 class="contact-title">Хотите свой проект?</h2>
+
+            <div class="contact-form">
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" class="form-control" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="example@mail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" class="form-control" rows="4"
+                                  placeholder="Расскажите о вашем проекте..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Контейнер для футера (загружается через JS) -->
+<div id="footer-container">
+    <div class="loading-spinner"></div>
+</div>
+
+
+<!-- подключаем JS) -->
+<script src="./assets/js/modules/menu-loader.js" defer></script>
+<script src="./assets/js/modules/footer-loader.js" defer></script>
+<script src="./assets/js/carousel.js" defer></script>
+<script src="./assets/js/pages/kontakts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Инициализация AOS после полной загрузки страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 800, // длительность анимации
+            once: true,    // анимация только один раз
+            offset: 120,  // смещение для срабатывания
+            delay: 100,    // задержка анимации
+        });
+    });
+</script>
 </body>
 </html>

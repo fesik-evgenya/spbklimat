@@ -4,7 +4,7 @@
  * @param {number} zoom - Уровень масштабирования
  * @param {string} elementId - ID контейнера для карты
  */
-function initMap(center = [59.852470, 30.285200], zoom = 16, elementId = 'map') {
+function initMap(center = [59.854038, 30.285891], zoom = 16, elementId = 'map') {
     if (typeof ymaps === 'undefined') {
         console.error('Yandex Maps API not loaded');
         return;
