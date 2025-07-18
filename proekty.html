@@ -261,6 +261,18 @@
                                   placeholder="Расскажите о вашем проекте..."></textarea>
                     </div>
 
+                    <!-- поле для прикрепления файла -->
+                    <div class="form-group chose-file">
+                        <div class="file-upload-wrapper">
+                            <!-- Скрытый оригинальный input -->
+                            <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+                            <!-- Кастомная кнопка и текст -->
+                            <label for="fileInput" class="file-label">Выбрать файл</label>
+                            <span id="fileName" class="file-name">Файл не выбран</span>
+                        </div>
+                    </div>
+
                     <button type="submit" class="submit-btn">Отправить заявку</button>
                 </form>
             </div>
@@ -278,6 +290,7 @@
 <script src="./assets/js/modules/menu-loader.js" defer></script>
 <script src="./assets/js/modules/footer-loader.js" defer></script>
 <script src="./assets/js/carousel.js" defer></script>
+<script src="./assets/js/name_file_for_add.js" defer></script>
 <script src="./assets/js/pages/kontakts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>

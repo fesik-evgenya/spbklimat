@@ -176,8 +176,7 @@ body {
 }
 
 .features-list li {
-    padding: 8px 0;
-    padding-left: 30px;
+    padding: 8px 0 8px 30px;
     position: relative;
 }
 
@@ -264,7 +263,7 @@ body {
 }
 
 .carousel-btn:hover {
-    background: var(--white);
+    background: var(--light);
     transform: scale(1.1);
 }
 
@@ -318,7 +317,7 @@ body {
     left: 100%;
 }
 
-/* Форма обратной связи (стиль из kontakty.css) */
+/* Форма обратной связи*/
 .contact-form {
     border: 1px solid rgba(33, 4, 90, 0.1);
     padding: 40px 35px;
@@ -359,6 +358,11 @@ body {
     position: relative;
 }
 
+.form-group label{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 input, textarea {
     width: 100%;
     box-sizing: border-box;
@@ -384,6 +388,50 @@ input:focus, textarea:focus {
     box-shadow: 0 0 15px rgba(33, 4, 90, 0.15);
     outline: none;
     transform: translateY(-2px);
+}
+
+.chose-file {
+    margin-top: 10px;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    background: rgba(33, 4, 90, 0.05);
+    border: 1px solid rgba(33, 4, 90, 0.15);
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(33, 4, 90, 0.8);
+}
+
+.file-label:hover {
+    background: rgba(33, 4, 90, 0.1);
+    transform: translateY(-2px);
+}
+
+.file-name {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(33, 4, 90, 0.7);
+    font-family: 'Open Sans', sans-serif;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Плейсхолдеры */
